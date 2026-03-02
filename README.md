@@ -69,19 +69,26 @@ intel-iot-data-analytics/
 └── README.md
 ```
 
-## Getting Started
+## Project Phases
 
-### Create folder structure
+### Phase#1 Getting Started
+
+#### Create folder structure
 
 mkdir -p data/bronze data/silver data/gold scripts notebooks
 
-### Create the LOCAL Conda Environment needed for the ETL pipeline
+#### Create the LOCAL Conda Environment needed for the ETL pipeline
 
 conda create --prefix ./env python=3.10 pandas numpy matplotlib scikit-learn jupyter pyarrow fastparquet tqdm -y
 
-### Activate the local environment
+#### Activate the local environment
 
 conda activate ./env
+jupyter notebook
+
+#### Phase#2 Data Generation (The "Raw" Data)
+
+Since real 2,000-cow datasets are under corporate NDA, we wrote a Python script to generate a highly realistic "Digital Twin" dataset. It simulates diurnal temperature, heat stress affecting rumination, and hardware failures (dead batteries).
 
 ## License
 
