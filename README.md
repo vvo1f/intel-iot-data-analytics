@@ -86,7 +86,7 @@ conda create --prefix ./env python=3.10 pandas numpy matplotlib scikit-learn jup
 conda activate ./env
 jupyter notebook
 
-#### Phase#2 Data Generation (The "Raw" Data)
+### Phase#2 Data Generation (The "Raw" Data)
 
 Since real 2,000-cow datasets are under corporate NDA, we wrote a Python script to generate a highly realistic "Digital Twin" dataset. It simulates diurnal temperature, heat stress affecting rumination, and hardware failures (dead batteries).
 
