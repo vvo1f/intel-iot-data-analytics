@@ -71,7 +71,17 @@ intel-iot-data-analytics/
 
 ## Getting Started
 
-[Add installation, configuration, and execution instructions here]
+### Create folder structure
+
+mkdir -p data/bronze data/silver data/gold scripts notebooks
+
+### Create the LOCAL Conda Environment needed for the ETL pipeline
+
+conda create --prefix ./env python=3.10 pandas numpy matplotlib scikit-learn jupyter pyarrow fastparquet tqdm -y
+
+### Activate the local environment
+
+conda activate ./env
 
 ## License
 
