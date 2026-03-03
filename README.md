@@ -79,7 +79,7 @@ mkdir -p data/bronze data/silver data/gold scripts notebooks
 
 #### Create the LOCAL Conda Environment needed for the ETL pipeline
 
-conda create --prefix ./env python=3.10 pandas numpy matplotlib scikit-learn jupyter pyarrow fastparquet tqdm -y
+conda create --prefix ./env python=3.10 pandas numpy matplotlib scikit-learn polars pyarrow jupyter pyarrow fastparquet tqdm -y
 
 #### Activate the local environment
 
@@ -89,6 +89,29 @@ jupyter notebook
 ### Phase#2 Data Generation (The "Raw" Data)
 
 Since real 2,000-cow datasets are under corporate NDA, we wrote a Python script to generate a highly realistic "Digital Twin" dataset. It simulates diurnal temperature, heat stress affecting rumination, and hardware failures (dead batteries).
+
+- step#1: Download the sensor_data from Kaggle
+  -- way#1
+  link: https://www.kaggle.com/datasets/hienvuvg/mmcows?resource=download-directory&select=sensor_data
+
+  -- way#2
+
+  ```
+  pip install kaggle
+  kaggle datasets download -d hienvuvg/mmcows -p ./data --unzip
+  ```
+
+NOTE: We mainly focus on structured data provided by "sensor_data" in the main dataset.
+
+#### Main Data Focus:
+
+- main_data/immu: The core accelerometer firehose (The behavior physics).
+
+- behavior_labels/individual: The ground truth (Eating, Resting, Rumination).
+
+- main_data/thi (or weather): Temperature Humidity Index (The environmental stressor).
+
+- sub_data/health_records (or cbt): The actual welfare outcomes.
 
 ## License
 
