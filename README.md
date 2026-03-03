@@ -101,6 +101,18 @@ Since real 2,000-cow datasets are under corporate NDA, we wrote a Python script 
   kaggle datasets download -d hienvuvg/mmcows -p ./data --unzip
   ```
 
+NOTE: We mainly focus on structured data provided by "sensor_data" in the main dataset.
+
+#### Main Data Focus:
+
+- main_data/immu: The core accelerometer firehose (The behavior physics).
+
+- behavior_labels/individual: The ground truth (Eating, Resting, Rumination).
+
+- main_data/thi (or weather): Temperature Humidity Index (The environmental stressor).
+
+- sub_data/health_records (or cbt): The actual welfare outcomes.
+
 ## License
 
 MIT
